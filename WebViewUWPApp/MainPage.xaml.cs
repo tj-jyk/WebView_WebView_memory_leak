@@ -46,7 +46,9 @@ namespace WebView2UWPApp
 			VisualTreeHelper.DisconnectChildrenRecursive(rootGrid);
 			for (var i = 0; i < allWebViews.Count; i++)
 			{
-				allWebViews[i].Source = new Uri("about:blank");
+				//allWebViews[i].Source = new Uri("about:blank");
+				allWebViews[i].Close();
+				GC.Collect();
 			}
 
 			AddNewWebView2();
